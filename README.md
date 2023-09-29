@@ -44,6 +44,13 @@ You can install these packages using your system's package manager or by buildin
 ```bash
 dnf install bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install
 ```
+## Disabling cpu boosting
+
+```bash
+ cpupower frequency-set --governori userspace
+ cpupower frequency-set -f 2000000
+ echo 0 > /sys/devices/system/cpu/cpufreq/boost
+```
 ## Setting Up an LXC Container with Fedora 38
 
 To run the KCBench compilation tests in an LXC container with Fedora 38, follow these steps:
