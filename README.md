@@ -117,7 +117,7 @@ To run the KCBench compilation tests in a QEMU virtual machine, follow these ste
 2. Download a QEMU-compatible disk image for the desired architecture. For our use case, fedora 38 x86-64:
 
    ```bash
-   wget http://example.com/arm64-disk-image.qcow2
+   wget https://download.fedoraproject.org/pub/fedora/linux/releases/38/Server/x86_64/images/Fedora-Server-KVM-38-1.6.x86_64.qcow2
    ```
 
 3. Virtio setup, we need to setup and start the kvm interface before creating our vm.
