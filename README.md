@@ -85,7 +85,7 @@ To run the KCBench compilation tests in an LXC container with Fedora 38, follow 
 
    ```bash
    dnf update -y
-   dnf install -y bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install 
+   dnf install -y bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install cpufrequtils 
    ```
 
 6. Clone the KCBench repository within the container:
