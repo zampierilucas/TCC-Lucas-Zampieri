@@ -18,7 +18,7 @@ clean_kernel() {
 # Function to log core clocks
 log_core_clocks() {
   while true; do
-    cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq > log/core_clocks/core_clocks-$date.log
+    cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq >> log/core_clocks/core_clocks-$date.log
     sleep 1
   done
 }
