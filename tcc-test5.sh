@@ -18,7 +18,7 @@ clean_kernel() {
 # Function to log core clocks
 log_core_clocks() {
   while true; do
-    cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq >> log/core_clocks/core_clocks-$date.log
+    cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq >> log/core_clocks/core2_clocks-$date.log
     sleep 1
   done
 }
@@ -35,6 +35,7 @@ mkdir -p log/core_clocks
 
 # Start logging core clocks in the background
 log_core_clocks &
+echo $! > "log/core_clocks_pid.txt"
 
 # Loop for different CPU configurations
 for cpus in {32..416..32}; do
@@ -42,5 +43,7 @@ for cpus in {32..416..32}; do
   run_kcbench $cpus
 done
 
-# Stop logging core clocks after the loop is complete
-kill $(pgrep -f log_core_clocks)
+# Read the process ID from the file and stop logging core clocks
+core_clocks_pid=$(cat "log/core_clocks_pid.txt")
+kill "$core_clocks_pid"
+rm log/core_clocks_pid.txt
