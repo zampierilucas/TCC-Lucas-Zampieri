@@ -34,16 +34,16 @@ mkdir -p log/
 mkdir -p log/core_clocks
 
 # Start logging core clocks in the background
-log_core_clocks &
-echo $! > "log/core_clocks_pid.txt"
+#log_core_clocks &
+#echo $! > "log/core_clocks_pid.txt"
 
 # Loop for different CPU configurations
-for cpus in {32..32..32}; do
+for cpus in {4..4..4}; do
   # Run kcbench
   run_kcbench $cpus
 done
 
 # Read the process ID from the file and stop logging core clocks
-core_clocks_pid=$(cat "log/core_clocks_pid.txt")
-kill "$core_clocks_pid"
-rm log/core_clocks_pid.txt
+#core_clocks_pid=$(cat "log/core_clocks_pid.txt")
+#kill "$core_clocks_pid"
+#rm log/core_clocks_pid.txt
