@@ -36,7 +36,6 @@ mkdir -p log/core_clocks
 for cpus in 32; do
   # Start clock measurement for cpu count
   log_core_clocks $cpus &
-  echo $! > "log/core_clocks_$cpus.txt"
 
   # Run kcbench tests
   run_kcbench $cpus
