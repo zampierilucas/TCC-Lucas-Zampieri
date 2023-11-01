@@ -20,10 +20,7 @@ log_core_clocks() {
   cpus=$1
   echo "Starting Clock measurement with $cpus cpus"
 
-  while true; do
-    cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq >> log/core_clocks/core_clocks-$cpus-$date.log
-    sleep 1
-  done
+  ssh epyc-host "while true; do cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; sleep 1; done" >> log/core_clocks/core_clocks-$cpus-$date.log &
 }
 
 # Set date variable
@@ -38,14 +35,11 @@ mkdir -p log/core_clocks
 # Loop for different CPU configurations
 for cpus in 32 64 96 128 160 192 224 256 288 512; do
   # Start clock measurement for cpu count
-  #log_core_clocks $cpus &
-  #echo $! > "log/core_clocks_$cpus.txt"
+  log_core_clocks $cpus &
 
   # Run kcbench tests
   run_kcbench $cpus
 
   # Kill running clock measurement for cpu count
-  #core_clocks_pid=$(cat "log/core_clocks_$cpus.txt")
-  #kill "$core_clocks_pid"
-  #rm "log/core_clocks_$cpus.txt"
+  ssh epyc-host "pkill -f 'cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq'"
 done
