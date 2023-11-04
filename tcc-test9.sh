@@ -17,7 +17,7 @@ run_kcbench() {
   echo "$arch: Starting test with $cpus cpus"
 
   clean_kernel
-  ./kcbench/kcbench --detailed-results --cross-compile $arch --jobs $cpus --iterations 1 --crosscomp-scheme fedora --src /dev/shm/linux-6.4.15 2>&1 | tee $logpath/$tech/kcbench-x86-$cpus-$date.log
+  ./kcbench/kcbench --detailed-results --cross-compile $arch --jobs $cpus --iterations 50 --crosscomp-scheme fedora --src /dev/shm/linux-6.4.15 2>&1 | tee $logpath/$tech/kcbench-x86-$cpus-$date.log
 }
 
 # Function to log core clocks
@@ -27,10 +27,7 @@ log_core_clocks() {
 
   echo "$arch: Starting Clock measurement with $cpus cpus"
 
-  while true; do
-    cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq >> $logpath/$tech/core_clocks-$cpus-$date.log
-    sleep 1
-  done
+  bash -c "while true; do cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; sleep 1; done" >> log/core_clocks/core_clocks-$cpus-$date.log &
 }
 
 # Set date variable
@@ -45,7 +42,7 @@ for cpus in 32 64 96 128 160 192 224 256; do
     # Create logs directories
     mkdir -p "$logpath/$tech"
     # Start clock measurement for cpu count
-    log_core_clocks $cpus $arch &
+    log_core_clocks $cpus $arch
 
     # Run kcbench tests
     run_kcbench $cpus $arch
