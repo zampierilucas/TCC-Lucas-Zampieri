@@ -27,7 +27,7 @@ log_core_clocks() {
 
   echo "$arch: Starting Clock measurement with $cpus cpus"
 
-  bash -c "while true; do cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; sleep 1; done" >> log/core_clocks/core_clocks-$cpus-$date.log &
+  bash -c "while true; do cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; sleep 1; done" >> $log_path/$tech/core_clocks-$cpus-$date.log &
 }
 
 # Set date variable
