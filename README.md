@@ -34,6 +34,7 @@ gcc-powerpc64le-linux-gnu
 - `perl`
 - `gpg`
 - `wget`
+- `gcc-x86_64-linux-gnu`
 - `gcc-c++-powerpc64-linux-gnu`
 - `gcc-c++-powerpc64le-linux-gnu`
 - `gcc-powerpc64le-linux-gnu`
@@ -42,15 +43,9 @@ gcc-powerpc64le-linux-gnu
 
 You can install these packages using your system's package manager or by building them from source.
 ```bash
-dnf install bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install
+dnf install bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install gcc-x86_64-linux-gnu
 ```
-## Disabling cpu boosting
 
-```bash
- cpupower frequency-set --governori userspace
- cpupower frequency-set -f 2000000
- echo 0 > /sys/devices/system/cpu/cpufreq/boost
-```
 ## Setting Up an LXC Container with Fedora 38
 
 To run the KCBench compilation tests in an LXC container with Fedora 38, follow these steps:
@@ -85,19 +80,19 @@ To run the KCBench compilation tests in an LXC container with Fedora 38, follow 
 
    ```bash
    dnf update -y
-   dnf install -y bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install cpufrequtils 
+   dnf install -y bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install cpufrequtils gcc-x86_64-linux-gnu
    ```
 
 6. Clone the KCBench repository within the container:
 
    ```bash
-   git clone git@gitlab.com:knurd42/kcbench.git
+   git clone git@github.com:zampierilucas/tcc-tests.git --recurse-submodules
    ```
 
 7. Change to the KCBench directory:
 
    ```bash
-   cd kcbench
+   cd tcc-tests
    ```
 
 8. Run the KCBench compilation tests using the script provided with this repo.
