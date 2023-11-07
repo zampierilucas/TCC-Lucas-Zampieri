@@ -6,8 +6,8 @@ def Average(lst):
     return sum(lst) / len(lst)
 
 parser = argparse.ArgumentParser(description="Calculate average every 256 lines from a log file")
-parser.add_argument("file_path", type=str, help="Path to the log file")
-parser.add_argument('-t', '--type', type=str, help='Type log to process')
+parser.add_argument("file_path", type=str, help="Path to the log file", required=True)
+parser.add_argument('-t', '--type', type=str, help='Type log to process', required=True)
 args = parser.parse_args()
 
 extracted_numbers = []
