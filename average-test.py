@@ -1,19 +1,23 @@
 import argparse
 import glob
 import re
+# Import statistics Library
+import statistics
 
 def Average(lst):
-    return sum(lst) / len(lst)
+    return round(sum(lst) / len(lst), 2)
 
 parser = argparse.ArgumentParser(description="Calculate average every 256 lines from a log file")
-parser.add_argument("file_path", type=str, help="Path to the log file", required=True)
+parser.add_argument("file_path", type=str, help="Path to the log file")
 parser.add_argument('-t', '--type', type=str, help='Type log to process', required=True)
 args = parser.parse_args()
 
 extracted_numbers = []
 
 for arch in ["x86_64", "arm64", "riscv", "powerpc"]:
+    print(f"ARCH {arch:<7}")
     for cpus in [32, 64, 96, 128, 160, 192, 224, 256]:
+        extracted_numbers = []
         file_name = glob.glob(f"{args.file_path}{args.type}/{arch}/kcbench-{cpus}-*.log")
         with open(file_name[0], "r") as file:
             results_found = 0
@@ -22,4 +26,6 @@ for arch in ["x86_64", "arm64", "riscv", "powerpc"]:
                 if matches:
                     results_found += 1
                     extracted_numbers.append(float(matches[0]))
-            print(f"Average: ARCH {arch}: CPU {cpus}: {Average(extracted_numbers):.2f}")
+            print(f"{str(Average(extracted_numbers)).replace('.',',')}", end=";")
+            # print(f"{str(statistics.stdev(extracted_numbers)).replace('.',',')}", end=";")
+    print("")
