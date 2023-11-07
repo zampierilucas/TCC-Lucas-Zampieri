@@ -26,8 +26,10 @@ log_core_clocks() {
   arch=$2
 
   echo "$arch: Starting Clock measurement with $cpus cpus"
-
-  bash -c "while true; do cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; sleep 1; done" >> $logpath/$tech/$arch/core_clocks-$cpus-$date.log &
+  if tech == 'vm':
+    ssh epyc-host "while true; do cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; sleep 1; done" >> $logpath/$tech/$arch/core_clocks-$cpus-$date.log &
+  else:
+    bash -c "while true; do cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; sleep 1; done" >> $logpath/$tech/$arch/core_clocks-$cpus-$date.log &
 }
 
 # Set date variable
@@ -48,6 +50,9 @@ for cpus in 32 64 96 128 160 192 224 256; do
     run_kcbench $cpus $arch
 
     # Kill running clock measurement for cpu count
-    pkill -f 'cat /sys/devices/system/cpu/'
+    if tech == 'vm':
+      ssh epyc-host "pkill -f 'cat /sys/devices/system/cpu/'"
+    else:
+      pkill -f 'cat /sys/devices/system/cpu/'
   done
 done
