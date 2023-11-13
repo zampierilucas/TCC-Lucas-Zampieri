@@ -46,11 +46,29 @@ You can install these packages using your system's package manager or by buildin
 dnf install bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install gcc-x86_64-linux-gnu
 ```
 
+## Dependencies
+This dependencies are common though all test envieronments, needing to be installed on the host, ct and vm.
+
+   ```bash
+   dnf update
+   dnf install bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install gcc-x86_64-linux-gnu
+   ```
+
+## Setting Up the HOST OS
+
+For this we expect you to be running the same dist/os/version as in the container and virtual-machine, in our case Fedora 38.
+
+1. For the host the only step is to install its dependencies, [here](#Dependencies).
+
 ## Setting Up an LXC Container with Fedora 38
 
 To run the KCBench compilation tests in an LXC container with Fedora 38, follow these steps:
 
-1. Install LXC on your system if it's not already installed. You can usually install it via your system's package manager.
+1. Install LXC on your system.
+
+   ```bash
+   sudo dnf install lxc lxc-templates
+   ```
 
 2. Start lxc, make sure lxc is enabled and running
 
@@ -58,7 +76,7 @@ To run the KCBench compilation tests in an LXC container with Fedora 38, follow 
    systemctl enable --now lxc
    ```
 
-2. Create an LXC container using the Fedora 38 image:
+2. Create an LXC container using a Fedora 38 image:
 
    ```bash
    lxc-create -n fedora-container -t download -- -d fedora -r 38 -a amd64
@@ -76,46 +94,21 @@ To run the KCBench compilation tests in an LXC container with Fedora 38, follow 
    lxc-attach fedora-container
    ```
 
-5. Inside the container, update the system packages and install any required dependencies not already included in the Fedora image:
+4. inside the container install this project dependencies as shown [here](#Dependencies).
 
-   ```bash
-   dnf update -y
-   dnf install -y bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install cpufrequtils gcc-x86_64-linux-gnu
-   ```
-
-6. Clone the KCBench repository within the container:
-
-   ```bash
-   git clone git@github.com:zampierilucas/tcc-tests.git --recurse-submodules
-   ```
-
-7. Change to the KCBench directory:
-
-   ```bash
-   cd tcc-tests
-   ```
-
-8. Run the KCBench compilation tests using the script provided with this repo.
-
-9. When you're done testing, exit the container's shell and stop the container:
-
-   ```bash
-   lxc stop my-fedora-container
-   ```
-
-## Setting Up a QEMU Virtual Machine
+## Setting Up a KVM Virtual Machine
 
 To run the KCBench compilation tests in a QEMU virtual machine, follow these steps:
 
-1. Install QEMU on your system if it's not already installed. It is also provided as part of the dependencies section above.
+1. Install the KVM tools in your system. It is also provided as part of the dependencies section above.
 
-2. Download a QEMU-compatible disk image for the desired architecture. For our use case, fedora 38 x86-64:
+2. Download a qcow2 fedora 38 disk image. For our use case, fedora 38 x86-64:
 
    ```bash
    wget https://download.fedoraproject.org/pub/fedora/linux/releases/38/Server/x86_64/images/Fedora-Server-KVM-38-1.6.x86_64.qcow2
    ```
 
-3. Virtio setup, we need to setup and start the kvm interface before creating our vm.
+3. Aditinal kvm setup, we need to setup and start the kvm interface before creating our vm.
 
    ```
    usermod -aG libvirt $usermod
@@ -123,22 +116,34 @@ To run the KCBench compilation tests in a QEMU virtual machine, follow these ste
    systemctl enable --now libvirtd
    ```
 
-3. Create a QEMU virtual machine using the downloaded disk image:
+3. Create a KVM virtual machine using the downloaded disk image:
 
    ```bash
-   qemu-system-x86_64 \
-      -smp cpus=256,sockets=2 \
-      -M q35 \
-      -cpu host \
-      -enable-kvm \
-      -m 100G \
-      -nographic \
-      -drive file=Fedora-Server-KVM-38-1.6.x86_64.qcow2
+   virt-install \
+   --name fedora \
+   --virt-type kvm \
+   --boot hd \
+   --disk path=Fedora-Server-KVM-38-1.6.x86_64.qcow2,device=disk \
+   --graphics none \
+   --os-variant=fedora38
    ```
 
-   Customize the CPU type, memory, kmv emulator and smp settings as needed for your tests.
+4. inside the virtual-machine install this project dependencies as shown [here](#Dependencies).
 
-4. Inside the virtual machine, you can now clone the KCBench repository and run the compilation tests using the script provided.
+## Running the tests
 
-5. When you're done testing, you can exit the virtual machine by shutting it down from within the VM or by stopping the QEMU process.
+To reprodute this repository tests you will need to:
 
+1. Clone the KCBench repository and its sub-repositories:
+
+   ```bash
+   git clone git@github.com:zampierilucas/tcc-tests.git --recurse-submodules
+   ```
+
+2. Enter its directory to the KCBench directory:
+
+   ```bash
+   cd tcc-tests
+   ```
+
+3. Run the KCBench compilation tests using the script provided with this repo `test-scripts` folder.
