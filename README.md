@@ -2,11 +2,9 @@
 
 This script automates the process of running compilation tests of [KCBench](git@gitlab.com:knurd42/kcbench.git) on various architectures, including X86-64, arm64, riscv, and powerpc. It also provides instruction on how to setup containerized and virtualized envieronments. The script generates detailed compilation results and stores them in log files with timestamps for reference.
 
-## Prerequisites
+## Dependencies
 
 Before running the KCBench compilation tests, ensure that you have the following dependencies installed on your system:
-
-gcc-powerpc64le-linux-gnu
 
 - `bc`
 - `bison`
@@ -41,18 +39,11 @@ gcc-powerpc64le-linux-gnu
 - `openssl`
 - `virt-install`
 
-You can install these packages using your system's package manager or by building them from source.
+Command:
 ```bash
+dnf update
 dnf install bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install gcc-x86_64-linux-gnu
 ```
-
-## Dependencies
-This dependencies are common though all test envieronments, needing to be installed on the host, ct and vm.
-
-   ```bash
-   dnf update
-   dnf install bc bison curl flex make time perl gcc pkg-config git tar elfutils-libelf-devel openssl-devel gcc-powerpc64-linux-gnu gcc-arm-linux-gnu gcc-aarch64-linux-gnu gcc-riscv64-linux-gnu qemu lxc lxc-templates lxc-extra debootstrap libvirt perl gpg wget gcc-c++-powerpc64-linux-gnu gcc-c++-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu openssl virt-install gcc-x86_64-linux-gnu
-   ```
 
 ## Setting Up the HOST OS
 
@@ -125,7 +116,9 @@ To run the KCBench compilation tests in a QEMU virtual machine, follow these ste
    --boot hd \
    --disk path=Fedora-Server-KVM-38-1.6.x86_64.qcow2,device=disk \
    --graphics none \
-   --os-variant=fedora38
+   --cpu host \
+   --os-variant=fedora38 \
+   --import
    ```
 
 4. inside the virtual-machine install this project dependencies as shown [here](#Dependencies).
