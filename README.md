@@ -1,4 +1,4 @@
-# KCBench Compilation Test Script
+# TCC Test scripts and data
 
 This script automates the process of running compilation tests of [KCBench](git@gitlab.com:knurd42/kcbench.git) on various architectures, including X86-64, arm64, riscv, and powerpc. It also provides instruction on how to setup containerized and virtualized envieronments. The script generates detailed compilation results and stores them in log files with timestamps for reference.
 
