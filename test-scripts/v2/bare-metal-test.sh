@@ -17,7 +17,7 @@ run_kcbench() {
   echo "$arch: Starting test with $cpus cpus"
 
   clean_kernel
-  ./kcbench/kcbench --detailed-results --cross-compile $arch --jobs $cpus --iterations 100 --crosscomp-scheme fedora --src /dev/shm/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
+  ../../kcbench/kcbench --detailed-results --cross-compile $arch --jobs $cpus --iterations 100 --crosscomp-scheme fedora --src /dev/shm/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
 }
 
 # Function to log core clocks
