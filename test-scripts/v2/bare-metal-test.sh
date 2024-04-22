@@ -5,8 +5,8 @@ tech=${2:-"host"}
 
 # Function to clean kernel
 clean_kernel() {
-  rm -rf /dev/shm/linux-6.4.15/
-  tar -xf /dev/shm/linux-6.4.15.tar.xz -C /dev/shm/
+  rm -rf /tmp/shm/linux-6.4.15/
+  tar -xf /tmp/shm/linux-6.4.15.tar.xz -C /tmp/shm/
 }
 
 # Function to run kcbench
@@ -17,7 +17,7 @@ run_kcbench() {
   echo "$arch: Starting test with $cpus cpus"
 
   clean_kernel
-  ../../kcbench/kcbench --detailed-results --cross-compile $arch --jobs $cpus --iterations 100 --crosscomp-scheme fedora --src /dev/shm/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
+  ../../kcbench/kcbench --detailed-results --cross-compile $arch --jobs $cpus --iterations 100 --crosscomp-scheme fedora --src /tmp/shm/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
 }
 
 # Function to log core clocks
@@ -42,7 +42,7 @@ notify () {
 date=$(date +"%Y_%m_%d_%I_%M_%p")
 
 # Download kernel source
-wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.4.15.tar.xz -P /dev/shm/
+wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.4.15.tar.xz -P /tmp/shm/
 
 # Loop for different CPU configurations
 for cpus in 32 64 96 128 160 192 224 256; do

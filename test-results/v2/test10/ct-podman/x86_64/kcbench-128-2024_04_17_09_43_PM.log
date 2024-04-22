@@ -1,0 +1,913 @@
+
+WARNING: Cross-compiling still experimental. Use at your own risk!
+
+Processor:           AMD EPYC 7713 64-Core Processor [256 CPUs]
+Cpufreq; Memory:     schedutil [acpi-cpufreq]; 240396 MiB
+Linux running:       6.8.4-200.fc39.x86_64 [x86_64]
+Compiler (target):   x86_64-linux-gnu-gcc (GCC) 13.2.1 20230728 (Red Hat Cross 13.2.1-1)
+Compiler (host):     gcc (GCC) 13.2.1 20240316 (Red Hat 13.2.1-7)
+Linux compiled:      6.4.15 [/tmp/shm/linux-6.4.15]
+Config; Environment: defconfig; ARCH="x86_64" CCACHE_DISABLE="1" CROSS_COMPILE="x86_64-linux-gnu-"
+Build command:       make vmlinux
+Filling caches:      This might take a while... Done
+Run 1 (-j 128):      39.74 seconds / 90.59 kernels/hour [P:5944%, 389 maj. pagefaults]
+  Elapsed Time(E): 0:39.74 (39.74 seconds)
+  CPU usage (P): 5944%
+  Kernel time (S): 667.16 seconds
+  User time (U): 1695.12 seconds
+  Major page faults (F): 389
+  Minor page faults (R): 58642909
+  Context switches involuntarily (c): 23926
+  Context switches voluntarily (w): 179452
+Run 2 (-j 128):      39.32 seconds / 91.56 kernels/hour [P:5980%, 360 maj. pagefaults]
+  Elapsed Time(E): 0:39.32 (39.32 seconds)
+  CPU usage (P): 5980%
+  Kernel time (S): 664.38 seconds
+  User time (U): 1687.26 seconds
+  Major page faults (F): 360
+  Minor page faults (R): 58639892
+  Context switches involuntarily (c): 23816
+  Context switches voluntarily (w): 172224
+Run 3 (-j 128):      39.32 seconds / 91.56 kernels/hour [P:5978%, 450 maj. pagefaults]
+  Elapsed Time(E): 0:39.32 (39.32 seconds)
+  CPU usage (P): 5978%
+  Kernel time (S): 664.07 seconds
+  User time (U): 1687.05 seconds
+  Major page faults (F): 450
+  Minor page faults (R): 58629386
+  Context switches involuntarily (c): 23896
+  Context switches voluntarily (w): 181211
+Run 4 (-j 128):      39.32 seconds / 91.56 kernels/hour [P:5978%, 423 maj. pagefaults]
+  Elapsed Time(E): 0:39.32 (39.32 seconds)
+  CPU usage (P): 5978%
+  Kernel time (S): 664.48 seconds
+  User time (U): 1686.84 seconds
+  Major page faults (F): 423
+  Minor page faults (R): 58633820
+  Context switches involuntarily (c): 23695
+  Context switches voluntarily (w): 181603
+Run 5 (-j 128):      40.11 seconds / 89.75 kernels/hour [P:5858%, 466 maj. pagefaults]
+  Elapsed Time(E): 0:40.11 (40.11 seconds)
+  CPU usage (P): 5858%
+  Kernel time (S): 662.84 seconds
+  User time (U): 1687.52 seconds
+  Major page faults (F): 466
+  Minor page faults (R): 58633087
+  Context switches involuntarily (c): 23485
+  Context switches voluntarily (w): 181014
+Run 6 (-j 128):      39.38 seconds / 91.42 kernels/hour [P:5969%, 440 maj. pagefaults]
+  Elapsed Time(E): 0:39.38 (39.38 seconds)
+  CPU usage (P): 5969%
+  Kernel time (S): 664.88 seconds
+  User time (U): 1686.14 seconds
+  Major page faults (F): 440
+  Minor page faults (R): 58635471
+  Context switches involuntarily (c): 24082
+  Context switches voluntarily (w): 181244
+Run 7 (-j 128):      39.59 seconds / 90.93 kernels/hour [P:5940%, 414 maj. pagefaults]
+  Elapsed Time(E): 0:39.59 (39.59 seconds)
+  CPU usage (P): 5940%
+  Kernel time (S): 665.33 seconds
+  User time (U): 1686.69 seconds
+  Major page faults (F): 414
+  Minor page faults (R): 58633496
+  Context switches involuntarily (c): 23691
+  Context switches voluntarily (w): 185088
+Run 8 (-j 128):      39.47 seconds / 91.21 kernels/hour [P:5954%, 428 maj. pagefaults]
+  Elapsed Time(E): 0:39.47 (39.47 seconds)
+  CPU usage (P): 5954%
+  Kernel time (S): 664.67 seconds
+  User time (U): 1685.94 seconds
+  Major page faults (F): 428
+  Minor page faults (R): 58636821
+  Context switches involuntarily (c): 23649
+  Context switches voluntarily (w): 178350
+Run 9 (-j 128):      39.64 seconds / 90.82 kernels/hour [P:5930%, 420 maj. pagefaults]
+  Elapsed Time(E): 0:39.64 (39.64 seconds)
+  CPU usage (P): 5930%
+  Kernel time (S): 663.96 seconds
+  User time (U): 1687.22 seconds
+  Major page faults (F): 420
+  Minor page faults (R): 58636030
+  Context switches involuntarily (c): 23557
+  Context switches voluntarily (w): 185034
+Run 10 (-j 128):     39.34 seconds / 91.51 kernels/hour [P:5970%, 459 maj. pagefaults]
+  Elapsed Time(E): 0:39.34 (39.34 seconds)
+  CPU usage (P): 5970%
+  Kernel time (S): 662.34 seconds
+  User time (U): 1686.60 seconds
+  Major page faults (F): 459
+  Minor page faults (R): 58641827
+  Context switches involuntarily (c): 23495
+  Context switches voluntarily (w): 180549
+Run 11 (-j 128):     39.30 seconds / 91.60 kernels/hour [P:5988%, 457 maj. pagefaults]
+  Elapsed Time(E): 0:39.30 (39.30 seconds)
+  CPU usage (P): 5988%
+  Kernel time (S): 664.16 seconds
+  User time (U): 1689.56 seconds
+  Major page faults (F): 457
+  Minor page faults (R): 58635534
+  Context switches involuntarily (c): 23733
+  Context switches voluntarily (w): 179853
+Run 12 (-j 128):     39.47 seconds / 91.21 kernels/hour [P:5962%, 447 maj. pagefaults]
+  Elapsed Time(E): 0:39.47 (39.47 seconds)
+  CPU usage (P): 5962%
+  Kernel time (S): 666.32 seconds
+  User time (U): 1687.55 seconds
+  Major page faults (F): 447
+  Minor page faults (R): 58635421
+  Context switches involuntarily (c): 24010
+  Context switches voluntarily (w): 182907
+Run 13 (-j 128):     39.50 seconds / 91.14 kernels/hour [P:5962%, 419 maj. pagefaults]
+  Elapsed Time(E): 0:39.50 (39.50 seconds)
+  CPU usage (P): 5962%
+  Kernel time (S): 665.82 seconds
+  User time (U): 1689.44 seconds
+  Major page faults (F): 419
+  Minor page faults (R): 58629539
+  Context switches involuntarily (c): 24029
+  Context switches voluntarily (w): 179493
+Run 14 (-j 128):     39.67 seconds / 90.75 kernels/hour [P:5933%, 377 maj. pagefaults]
+  Elapsed Time(E): 0:39.67 (39.67 seconds)
+  CPU usage (P): 5933%
+  Kernel time (S): 666.68 seconds
+  User time (U): 1687.54 seconds
+  Major page faults (F): 377
+  Minor page faults (R): 58649587
+  Context switches involuntarily (c): 23790
+  Context switches voluntarily (w): 184004
+Run 15 (-j 128):     39.88 seconds / 90.27 kernels/hour [P:5897%, 442 maj. pagefaults]
+  Elapsed Time(E): 0:39.88 (39.88 seconds)
+  CPU usage (P): 5897%
+  Kernel time (S): 665.76 seconds
+  User time (U): 1686.45 seconds
+  Major page faults (F): 442
+  Minor page faults (R): 58643471
+  Context switches involuntarily (c): 24076
+  Context switches voluntarily (w): 183337
+Run 16 (-j 128):     39.52 seconds / 91.09 kernels/hour [P:5959%, 392 maj. pagefaults]
+  Elapsed Time(E): 0:39.52 (39.52 seconds)
+  CPU usage (P): 5959%
+  Kernel time (S): 665.91 seconds
+  User time (U): 1689.51 seconds
+  Major page faults (F): 392
+  Minor page faults (R): 58633643
+  Context switches involuntarily (c): 23942
+  Context switches voluntarily (w): 186849
+Run 17 (-j 128):     39.35 seconds / 91.49 kernels/hour [P:5975%, 467 maj. pagefaults]
+  Elapsed Time(E): 0:39.35 (39.35 seconds)
+  CPU usage (P): 5975%
+  Kernel time (S): 664.04 seconds
+  User time (U): 1687.47 seconds
+  Major page faults (F): 467
+  Minor page faults (R): 58634794
+  Context switches involuntarily (c): 23770
+  Context switches voluntarily (w): 178675
+Run 18 (-j 128):     40.12 seconds / 89.73 kernels/hour [P:5856%, 453 maj. pagefaults]
+  Elapsed Time(E): 0:40.12 (40.12 seconds)
+  CPU usage (P): 5856%
+  Kernel time (S): 664.57 seconds
+  User time (U): 1685.07 seconds
+  Major page faults (F): 453
+  Minor page faults (R): 58644830
+  Context switches involuntarily (c): 23731
+  Context switches voluntarily (w): 180292
+Run 19 (-j 128):     39.19 seconds / 91.86 kernels/hour [P:6005%, 447 maj. pagefaults]
+  Elapsed Time(E): 0:39.19 (39.19 seconds)
+  CPU usage (P): 6005%
+  Kernel time (S): 665.39 seconds
+  User time (U): 1688.37 seconds
+  Major page faults (F): 447
+  Minor page faults (R): 58640882
+  Context switches involuntarily (c): 23843
+  Context switches voluntarily (w): 181347
+Run 20 (-j 128):     39.27 seconds / 91.67 kernels/hour [P:5980%, 477 maj. pagefaults]
+  Elapsed Time(E): 0:39.27 (39.27 seconds)
+  CPU usage (P): 5980%
+  Kernel time (S): 664.60 seconds
+  User time (U): 1684.51 seconds
+  Major page faults (F): 477
+  Minor page faults (R): 58639372
+  Context switches involuntarily (c): 23658
+  Context switches voluntarily (w): 183568
+Run 21 (-j 128):     39.52 seconds / 91.09 kernels/hour [P:5942%, 417 maj. pagefaults]
+  Elapsed Time(E): 0:39.52 (39.52 seconds)
+  CPU usage (P): 5942%
+  Kernel time (S): 663.63 seconds
+  User time (U): 1685.32 seconds
+  Major page faults (F): 417
+  Minor page faults (R): 58643988
+  Context switches involuntarily (c): 23620
+  Context switches voluntarily (w): 177804
+Run 22 (-j 128):     39.45 seconds / 91.25 kernels/hour [P:5961%, 393 maj. pagefaults]
+  Elapsed Time(E): 0:39.45 (39.45 seconds)
+  CPU usage (P): 5961%
+  Kernel time (S): 664.95 seconds
+  User time (U): 1686.91 seconds
+  Major page faults (F): 393
+  Minor page faults (R): 58638896
+  Context switches involuntarily (c): 23695
+  Context switches voluntarily (w): 183517
+Run 23 (-j 128):     39.16 seconds / 91.93 kernels/hour [P:5999%, 411 maj. pagefaults]
+  Elapsed Time(E): 0:39.16 (39.16 seconds)
+  CPU usage (P): 5999%
+  Kernel time (S): 665.83 seconds
+  User time (U): 1683.60 seconds
+  Major page faults (F): 411
+  Minor page faults (R): 58643388
+  Context switches involuntarily (c): 23922
+  Context switches voluntarily (w): 179482
+Run 24 (-j 128):     39.34 seconds / 91.51 kernels/hour [P:5975%, 385 maj. pagefaults]
+  Elapsed Time(E): 0:39.34 (39.34 seconds)
+  CPU usage (P): 5975%
+  Kernel time (S): 663.08 seconds
+  User time (U): 1688.06 seconds
+  Major page faults (F): 385
+  Minor page faults (R): 58645890
+  Context switches involuntarily (c): 23807
+  Context switches voluntarily (w): 178746
+Run 25 (-j 128):     39.17 seconds / 91.91 kernels/hour [P:6008%, 383 maj. pagefaults]
+  Elapsed Time(E): 0:39.17 (39.17 seconds)
+  CPU usage (P): 6008%
+  Kernel time (S): 666.93 seconds
+  User time (U): 1686.62 seconds
+  Major page faults (F): 383
+  Minor page faults (R): 58646479
+  Context switches involuntarily (c): 24154
+  Context switches voluntarily (w): 182500
+Run 26 (-j 128):     39.29 seconds / 91.63 kernels/hour [P:5984%, 434 maj. pagefaults]
+  Elapsed Time(E): 0:39.29 (39.29 seconds)
+  CPU usage (P): 5984%
+  Kernel time (S): 665.94 seconds
+  User time (U): 1685.26 seconds
+  Major page faults (F): 434
+  Minor page faults (R): 58648537
+  Context switches involuntarily (c): 23853
+  Context switches voluntarily (w): 182379
+Run 27 (-j 128):     39.50 seconds / 91.14 kernels/hour [P:5958%, 349 maj. pagefaults]
+  Elapsed Time(E): 0:39.50 (39.50 seconds)
+  CPU usage (P): 5958%
+  Kernel time (S): 667.41 seconds
+  User time (U): 1686.32 seconds
+  Major page faults (F): 349
+  Minor page faults (R): 58629546
+  Context switches involuntarily (c): 23681
+  Context switches voluntarily (w): 173143
+Run 28 (-j 128):     39.50 seconds / 91.14 kernels/hour [P:5960%, 413 maj. pagefaults]
+  Elapsed Time(E): 0:39.50 (39.50 seconds)
+  CPU usage (P): 5960%
+  Kernel time (S): 664.64 seconds
+  User time (U): 1690.02 seconds
+  Major page faults (F): 413
+  Minor page faults (R): 58634856
+  Context switches involuntarily (c): 23760
+  Context switches voluntarily (w): 185046
+Run 29 (-j 128):     40.48 seconds / 88.93 kernels/hour [P:5809%, 415 maj. pagefaults]
+  Elapsed Time(E): 0:40.48 (40.48 seconds)
+  CPU usage (P): 5809%
+  Kernel time (S): 663.02 seconds
+  User time (U): 1688.83 seconds
+  Major page faults (F): 415
+  Minor page faults (R): 58636034
+  Context switches involuntarily (c): 23367
+  Context switches voluntarily (w): 179514
+Run 30 (-j 128):     39.38 seconds / 91.42 kernels/hour [P:5969%, 425 maj. pagefaults]
+  Elapsed Time(E): 0:39.38 (39.38 seconds)
+  CPU usage (P): 5969%
+  Kernel time (S): 665.35 seconds
+  User time (U): 1685.68 seconds
+  Major page faults (F): 425
+  Minor page faults (R): 58638803
+  Context switches involuntarily (c): 23660
+  Context switches voluntarily (w): 180237
+Run 31 (-j 128):     39.93 seconds / 90.16 kernels/hour [P:5883%, 403 maj. pagefaults]
+  Elapsed Time(E): 0:39.93 (39.93 seconds)
+  CPU usage (P): 5883%
+  Kernel time (S): 662.80 seconds
+  User time (U): 1686.51 seconds
+  Major page faults (F): 403
+  Minor page faults (R): 58640638
+  Context switches involuntarily (c): 23751
+  Context switches voluntarily (w): 176225
+Run 32 (-j 128):     39.31 seconds / 91.58 kernels/hour [P:5987%, 431 maj. pagefaults]
+  Elapsed Time(E): 0:39.31 (39.31 seconds)
+  CPU usage (P): 5987%
+  Kernel time (S): 665.81 seconds
+  User time (U): 1687.76 seconds
+  Major page faults (F): 431
+  Minor page faults (R): 58630249
+  Context switches involuntarily (c): 23977
+  Context switches voluntarily (w): 182224
+Run 33 (-j 128):     39.56 seconds / 91.00 kernels/hour [P:5948%, 379 maj. pagefaults]
+  Elapsed Time(E): 0:39.56 (39.56 seconds)
+  CPU usage (P): 5948%
+  Kernel time (S): 667.24 seconds
+  User time (U): 1686.34 seconds
+  Major page faults (F): 379
+  Minor page faults (R): 58629743
+  Context switches involuntarily (c): 23978
+  Context switches voluntarily (w): 182056
+Run 34 (-j 128):     39.19 seconds / 91.86 kernels/hour [P:6005%, 473 maj. pagefaults]
+  Elapsed Time(E): 0:39.19 (39.19 seconds)
+  CPU usage (P): 6005%
+  Kernel time (S): 665.74 seconds
+  User time (U): 1688.07 seconds
+  Major page faults (F): 473
+  Minor page faults (R): 58641641
+  Context switches involuntarily (c): 23918
+  Context switches voluntarily (w): 179940
+Run 35 (-j 128):     39.11 seconds / 92.05 kernels/hour [P:6011%, 386 maj. pagefaults]
+  Elapsed Time(E): 0:39.11 (39.11 seconds)
+  CPU usage (P): 6011%
+  Kernel time (S): 664.57 seconds
+  User time (U): 1686.51 seconds
+  Major page faults (F): 386
+  Minor page faults (R): 58638921
+  Context switches involuntarily (c): 23725
+  Context switches voluntarily (w): 178898
+Run 36 (-j 128):     39.60 seconds / 90.91 kernels/hour [P:5932%, 430 maj. pagefaults]
+  Elapsed Time(E): 0:39.60 (39.60 seconds)
+  CPU usage (P): 5932%
+  Kernel time (S): 666.55 seconds
+  User time (U): 1682.78 seconds
+  Major page faults (F): 430
+  Minor page faults (R): 58644455
+  Context switches involuntarily (c): 23947
+  Context switches voluntarily (w): 180607
+Run 37 (-j 128):     39.39 seconds / 91.39 kernels/hour [P:5966%, 428 maj. pagefaults]
+  Elapsed Time(E): 0:39.39 (39.39 seconds)
+  CPU usage (P): 5966%
+  Kernel time (S): 663.97 seconds
+  User time (U): 1686.09 seconds
+  Major page faults (F): 428
+  Minor page faults (R): 58641533
+  Context switches involuntarily (c): 23647
+  Context switches voluntarily (w): 182200
+Run 38 (-j 128):     39.25 seconds / 91.72 kernels/hour [P:5993%, 421 maj. pagefaults]
+  Elapsed Time(E): 0:39.25 (39.25 seconds)
+  CPU usage (P): 5993%
+  Kernel time (S): 665.91 seconds
+  User time (U): 1686.59 seconds
+  Major page faults (F): 421
+  Minor page faults (R): 58634235
+  Context switches involuntarily (c): 23531
+  Context switches voluntarily (w): 181500
+Run 39 (-j 128):     39.26 seconds / 91.70 kernels/hour [P:5991%, 431 maj. pagefaults]
+  Elapsed Time(E): 0:39.26 (39.26 seconds)
+  CPU usage (P): 5991%
+  Kernel time (S): 664.88 seconds
+  User time (U): 1687.26 seconds
+  Major page faults (F): 431
+  Minor page faults (R): 58634445
+  Context switches involuntarily (c): 23631
+  Context switches voluntarily (w): 177902
+Run 40 (-j 128):     39.42 seconds / 91.32 kernels/hour [P:5965%, 405 maj. pagefaults]
+  Elapsed Time(E): 0:39.42 (39.42 seconds)
+  CPU usage (P): 5965%
+  Kernel time (S): 665.31 seconds
+  User time (U): 1686.45 seconds
+  Major page faults (F): 405
+  Minor page faults (R): 58645988
+  Context switches involuntarily (c): 23811
+  Context switches voluntarily (w): 179818
+Run 41 (-j 128):     39.43 seconds / 91.30 kernels/hour [P:5968%, 473 maj. pagefaults]
+  Elapsed Time(E): 0:39.43 (39.43 seconds)
+  CPU usage (P): 5968%
+  Kernel time (S): 667.07 seconds
+  User time (U): 1686.67 seconds
+  Major page faults (F): 473
+  Minor page faults (R): 58638560
+  Context switches involuntarily (c): 23505
+  Context switches voluntarily (w): 173635
+Run 42 (-j 128):     39.46 seconds / 91.23 kernels/hour [P:5964%, 483 maj. pagefaults]
+  Elapsed Time(E): 0:39.46 (39.46 seconds)
+  CPU usage (P): 5964%
+  Kernel time (S): 666.36 seconds
+  User time (U): 1687.43 seconds
+  Major page faults (F): 483
+  Minor page faults (R): 58646779
+  Context switches involuntarily (c): 24109
+  Context switches voluntarily (w): 184336
+Run 43 (-j 128):     39.34 seconds / 91.51 kernels/hour [P:5975%, 407 maj. pagefaults]
+  Elapsed Time(E): 0:39.34 (39.34 seconds)
+  CPU usage (P): 5975%
+  Kernel time (S): 666.60 seconds
+  User time (U): 1684.46 seconds
+  Major page faults (F): 407
+  Minor page faults (R): 58636952
+  Context switches involuntarily (c): 23813
+  Context switches voluntarily (w): 182504
+Run 44 (-j 128):     39.52 seconds / 91.09 kernels/hour [P:5956%, 448 maj. pagefaults]
+  Elapsed Time(E): 0:39.52 (39.52 seconds)
+  CPU usage (P): 5956%
+  Kernel time (S): 665.48 seconds
+  User time (U): 1688.49 seconds
+  Major page faults (F): 448
+  Minor page faults (R): 58626148
+  Context switches involuntarily (c): 23568
+  Context switches voluntarily (w): 181754
+Run 45 (-j 128):     39.36 seconds / 91.46 kernels/hour [P:5982%, 410 maj. pagefaults]
+  Elapsed Time(E): 0:39.36 (39.36 seconds)
+  CPU usage (P): 5982%
+  Kernel time (S): 667.62 seconds
+  User time (U): 1687.20 seconds
+  Major page faults (F): 410
+  Minor page faults (R): 58627619
+  Context switches involuntarily (c): 24138
+  Context switches voluntarily (w): 186510
+Run 46 (-j 128):     39.28 seconds / 91.65 kernels/hour [P:5999%, 382 maj. pagefaults]
+  Elapsed Time(E): 0:39.28 (39.28 seconds)
+  CPU usage (P): 5999%
+  Kernel time (S): 668.82 seconds
+  User time (U): 1688.16 seconds
+  Major page faults (F): 382
+  Minor page faults (R): 58631677
+  Context switches involuntarily (c): 24074
+  Context switches voluntarily (w): 180990
+Run 47 (-j 128):     39.53 seconds / 91.07 kernels/hour [P:5958%, 385 maj. pagefaults]
+  Elapsed Time(E): 0:39.53 (39.53 seconds)
+  CPU usage (P): 5958%
+  Kernel time (S): 665.58 seconds
+  User time (U): 1689.68 seconds
+  Major page faults (F): 385
+  Minor page faults (R): 58626392
+  Context switches involuntarily (c): 23732
+  Context switches voluntarily (w): 179077
+Run 48 (-j 128):     39.27 seconds / 91.67 kernels/hour [P:6000%, 416 maj. pagefaults]
+  Elapsed Time(E): 0:39.27 (39.27 seconds)
+  CPU usage (P): 6000%
+  Kernel time (S): 667.82 seconds
+  User time (U): 1688.56 seconds
+  Major page faults (F): 416
+  Minor page faults (R): 58638326
+  Context switches involuntarily (c): 24017
+  Context switches voluntarily (w): 188978
+Run 49 (-j 128):     39.27 seconds / 91.67 kernels/hour [P:5992%, 435 maj. pagefaults]
+  Elapsed Time(E): 0:39.27 (39.27 seconds)
+  CPU usage (P): 5992%
+  Kernel time (S): 665.29 seconds
+  User time (U): 1687.98 seconds
+  Major page faults (F): 435
+  Minor page faults (R): 58631254
+  Context switches involuntarily (c): 23823
+  Context switches voluntarily (w): 182532
+Run 50 (-j 128):     39.52 seconds / 91.09 kernels/hour [P:5954%, 427 maj. pagefaults]
+  Elapsed Time(E): 0:39.52 (39.52 seconds)
+  CPU usage (P): 5954%
+  Kernel time (S): 667.14 seconds
+  User time (U): 1686.27 seconds
+  Major page faults (F): 427
+  Minor page faults (R): 58632234
+  Context switches involuntarily (c): 23294
+  Context switches voluntarily (w): 178124
+Run 51 (-j 128):     39.46 seconds / 91.23 kernels/hour [P:5961%, 397 maj. pagefaults]
+  Elapsed Time(E): 0:39.46 (39.46 seconds)
+  CPU usage (P): 5961%
+  Kernel time (S): 667.43 seconds
+  User time (U): 1685.18 seconds
+  Major page faults (F): 397
+  Minor page faults (R): 58628371
+  Context switches involuntarily (c): 23833
+  Context switches voluntarily (w): 180614
+Run 52 (-j 128):     39.33 seconds / 91.53 kernels/hour [P:5972%, 410 maj. pagefaults]
+  Elapsed Time(E): 0:39.33 (39.33 seconds)
+  CPU usage (P): 5972%
+  Kernel time (S): 665.95 seconds
+  User time (U): 1683.54 seconds
+  Major page faults (F): 410
+  Minor page faults (R): 58633999
+  Context switches involuntarily (c): 23642
+  Context switches voluntarily (w): 184090
+Run 53 (-j 128):     39.37 seconds / 91.44 kernels/hour [P:5969%, 424 maj. pagefaults]
+  Elapsed Time(E): 0:39.37 (39.37 seconds)
+  CPU usage (P): 5969%
+  Kernel time (S): 663.83 seconds
+  User time (U): 1686.66 seconds
+  Major page faults (F): 424
+  Minor page faults (R): 58635863
+  Context switches involuntarily (c): 23579
+  Context switches voluntarily (w): 173558
+Run 54 (-j 128):     39.48 seconds / 91.19 kernels/hour [P:5950%, 420 maj. pagefaults]
+  Elapsed Time(E): 0:39.48 (39.48 seconds)
+  CPU usage (P): 5950%
+  Kernel time (S): 662.92 seconds
+  User time (U): 1686.47 seconds
+  Major page faults (F): 420
+  Minor page faults (R): 58645214
+  Context switches involuntarily (c): 23510
+  Context switches voluntarily (w): 181251
+Run 55 (-j 128):     39.04 seconds / 92.21 kernels/hour [P:6025%, 432 maj. pagefaults]
+  Elapsed Time(E): 0:39.04 (39.04 seconds)
+  CPU usage (P): 6025%
+  Kernel time (S): 666.76 seconds
+  User time (U): 1685.78 seconds
+  Major page faults (F): 432
+  Minor page faults (R): 58638204
+  Context switches involuntarily (c): 24014
+  Context switches voluntarily (w): 178825
+Run 56 (-j 128):     39.03 seconds / 92.24 kernels/hour [P:6018%, 411 maj. pagefaults]
+  Elapsed Time(E): 0:39.03 (39.03 seconds)
+  CPU usage (P): 6018%
+  Kernel time (S): 666.60 seconds
+  User time (U): 1683.01 seconds
+  Major page faults (F): 411
+  Minor page faults (R): 58646551
+  Context switches involuntarily (c): 23874
+  Context switches voluntarily (w): 181204
+Run 57 (-j 128):     39.40 seconds / 91.37 kernels/hour [P:5965%, 418 maj. pagefaults]
+  Elapsed Time(E): 0:39.40 (39.40 seconds)
+  CPU usage (P): 5965%
+  Kernel time (S): 665.21 seconds
+  User time (U): 1685.34 seconds
+  Major page faults (F): 418
+  Minor page faults (R): 58643676
+  Context switches involuntarily (c): 23967
+  Context switches voluntarily (w): 180783
+Run 58 (-j 128):     39.38 seconds / 91.42 kernels/hour [P:5977%, 463 maj. pagefaults]
+  Elapsed Time(E): 0:39.38 (39.38 seconds)
+  CPU usage (P): 5977%
+  Kernel time (S): 667.88 seconds
+  User time (U): 1686.41 seconds
+  Major page faults (F): 463
+  Minor page faults (R): 58638526
+  Context switches involuntarily (c): 23727
+  Context switches voluntarily (w): 185657
+Run 59 (-j 128):     39.46 seconds / 91.23 kernels/hour [P:5963%, 487 maj. pagefaults]
+  Elapsed Time(E): 0:39.46 (39.46 seconds)
+  CPU usage (P): 5963%
+  Kernel time (S): 666.65 seconds
+  User time (U): 1686.90 seconds
+  Major page faults (F): 487
+  Minor page faults (R): 58641730
+  Context switches involuntarily (c): 23863
+  Context switches voluntarily (w): 178321
+Run 60 (-j 128):     39.15 seconds / 91.95 kernels/hour [P:6012%, 399 maj. pagefaults]
+  Elapsed Time(E): 0:39.15 (39.15 seconds)
+  CPU usage (P): 6012%
+  Kernel time (S): 666.70 seconds
+  User time (U): 1687.60 seconds
+  Major page faults (F): 399
+  Minor page faults (R): 58640604
+  Context switches involuntarily (c): 23934
+  Context switches voluntarily (w): 181612
+Run 61 (-j 128):     39.13 seconds / 92.00 kernels/hour [P:6002%, 408 maj. pagefaults]
+  Elapsed Time(E): 0:39.13 (39.13 seconds)
+  CPU usage (P): 6002%
+  Kernel time (S): 663.63 seconds
+  User time (U): 1685.41 seconds
+  Major page faults (F): 408
+  Minor page faults (R): 58634097
+  Context switches involuntarily (c): 23562
+  Context switches voluntarily (w): 182024
+Run 62 (-j 128):     40.10 seconds / 89.78 kernels/hour [P:5860%, 392 maj. pagefaults]
+  Elapsed Time(E): 0:40.10 (40.10 seconds)
+  CPU usage (P): 5860%
+  Kernel time (S): 663.54 seconds
+  User time (U): 1686.42 seconds
+  Major page faults (F): 392
+  Minor page faults (R): 58630969
+  Context switches involuntarily (c): 23785
+  Context switches voluntarily (w): 187587
+Run 63 (-j 128):     39.45 seconds / 91.25 kernels/hour [P:5963%, 379 maj. pagefaults]
+  Elapsed Time(E): 0:39.45 (39.45 seconds)
+  CPU usage (P): 5963%
+  Kernel time (S): 665.76 seconds
+  User time (U): 1686.96 seconds
+  Major page faults (F): 379
+  Minor page faults (R): 58642822
+  Context switches involuntarily (c): 23922
+  Context switches voluntarily (w): 180426
+Run 64 (-j 128):     39.26 seconds / 91.70 kernels/hour [P:5992%, 428 maj. pagefaults]
+  Elapsed Time(E): 0:39.26 (39.26 seconds)
+  CPU usage (P): 5992%
+  Kernel time (S): 665.31 seconds
+  User time (U): 1687.42 seconds
+  Major page faults (F): 428
+  Minor page faults (R): 58637388
+  Context switches involuntarily (c): 23558
+  Context switches voluntarily (w): 176277
+Run 65 (-j 128):     39.68 seconds / 90.73 kernels/hour [P:5934%, 407 maj. pagefaults]
+  Elapsed Time(E): 0:39.68 (39.68 seconds)
+  CPU usage (P): 5934%
+  Kernel time (S): 666.11 seconds
+  User time (U): 1688.91 seconds
+  Major page faults (F): 407
+  Minor page faults (R): 58627860
+  Context switches involuntarily (c): 24129
+  Context switches voluntarily (w): 179796
+Run 66 (-j 128):     39.19 seconds / 91.86 kernels/hour [P:6002%, 439 maj. pagefaults]
+  Elapsed Time(E): 0:39.19 (39.19 seconds)
+  CPU usage (P): 6002%
+  Kernel time (S): 664.10 seconds
+  User time (U): 1688.38 seconds
+  Major page faults (F): 439
+  Minor page faults (R): 58642366
+  Context switches involuntarily (c): 23907
+  Context switches voluntarily (w): 181955
+Run 67 (-j 128):     39.52 seconds / 91.09 kernels/hour [P:5952%, 430 maj. pagefaults]
+  Elapsed Time(E): 0:39.52 (39.52 seconds)
+  CPU usage (P): 5952%
+  Kernel time (S): 666.00 seconds
+  User time (U): 1686.66 seconds
+  Major page faults (F): 430
+  Minor page faults (R): 58637744
+  Context switches involuntarily (c): 23898
+  Context switches voluntarily (w): 181509
+Run 68 (-j 128):     39.18 seconds / 91.88 kernels/hour [P:6014%, 391 maj. pagefaults]
+  Elapsed Time(E): 0:39.18 (39.18 seconds)
+  CPU usage (P): 6014%
+  Kernel time (S): 670.79 seconds
+  User time (U): 1685.62 seconds
+  Major page faults (F): 391
+  Minor page faults (R): 58638510
+  Context switches involuntarily (c): 24164
+  Context switches voluntarily (w): 183489
+Run 69 (-j 128):     39.41 seconds / 91.35 kernels/hour [P:5968%, 380 maj. pagefaults]
+  Elapsed Time(E): 0:39.41 (39.41 seconds)
+  CPU usage (P): 5968%
+  Kernel time (S): 666.27 seconds
+  User time (U): 1686.40 seconds
+  Major page faults (F): 380
+  Minor page faults (R): 58632046
+  Context switches involuntarily (c): 23808
+  Context switches voluntarily (w): 179864
+Run 70 (-j 128):     39.76 seconds / 90.54 kernels/hour [P:5919%, 367 maj. pagefaults]
+  Elapsed Time(E): 0:39.76 (39.76 seconds)
+  CPU usage (P): 5919%
+  Kernel time (S): 665.02 seconds
+  User time (U): 1688.99 seconds
+  Major page faults (F): 367
+  Minor page faults (R): 58630388
+  Context switches involuntarily (c): 23899
+  Context switches voluntarily (w): 178108
+Run 71 (-j 128):     39.59 seconds / 90.93 kernels/hour [P:5946%, 417 maj. pagefaults]
+  Elapsed Time(E): 0:39.59 (39.59 seconds)
+  CPU usage (P): 5946%
+  Kernel time (S): 665.25 seconds
+  User time (U): 1689.17 seconds
+  Major page faults (F): 417
+  Minor page faults (R): 58631708
+  Context switches involuntarily (c): 23895
+  Context switches voluntarily (w): 182458
+Run 72 (-j 128):     39.62 seconds / 90.86 kernels/hour [P:5936%, 414 maj. pagefaults]
+  Elapsed Time(E): 0:39.62 (39.62 seconds)
+  CPU usage (P): 5936%
+  Kernel time (S): 664.50 seconds
+  User time (U): 1687.75 seconds
+  Major page faults (F): 414
+  Minor page faults (R): 58630450
+  Context switches involuntarily (c): 23904
+  Context switches voluntarily (w): 185556
+Run 73 (-j 128):     39.31 seconds / 91.58 kernels/hour [P:5980%, 382 maj. pagefaults]
+  Elapsed Time(E): 0:39.31 (39.31 seconds)
+  CPU usage (P): 5980%
+  Kernel time (S): 666.15 seconds
+  User time (U): 1685.19 seconds
+  Major page faults (F): 382
+  Minor page faults (R): 58640056
+  Context switches involuntarily (c): 24266
+  Context switches voluntarily (w): 180045
+Run 74 (-j 128):     39.40 seconds / 91.37 kernels/hour [P:5971%, 359 maj. pagefaults]
+  Elapsed Time(E): 0:39.40 (39.40 seconds)
+  CPU usage (P): 5971%
+  Kernel time (S): 665.91 seconds
+  User time (U): 1687.20 seconds
+  Major page faults (F): 359
+  Minor page faults (R): 58637206
+  Context switches involuntarily (c): 23607
+  Context switches voluntarily (w): 175578
+Run 75 (-j 128):     39.46 seconds / 91.23 kernels/hour [P:5965%, 444 maj. pagefaults]
+  Elapsed Time(E): 0:39.46 (39.46 seconds)
+  CPU usage (P): 5965%
+  Kernel time (S): 667.58 seconds
+  User time (U): 1686.77 seconds
+  Major page faults (F): 444
+  Minor page faults (R): 58652543
+  Context switches involuntarily (c): 23884
+  Context switches voluntarily (w): 178821
+Run 76 (-j 128):     39.67 seconds / 90.75 kernels/hour [P:5934%, 446 maj. pagefaults]
+  Elapsed Time(E): 0:39.67 (39.67 seconds)
+  CPU usage (P): 5934%
+  Kernel time (S): 666.65 seconds
+  User time (U): 1687.65 seconds
+  Major page faults (F): 446
+  Minor page faults (R): 58630563
+  Context switches involuntarily (c): 23917
+  Context switches voluntarily (w): 181577
+Run 77 (-j 128):     39.40 seconds / 91.37 kernels/hour [P:5977%, 429 maj. pagefaults]
+  Elapsed Time(E): 0:39.40 (39.40 seconds)
+  CPU usage (P): 5977%
+  Kernel time (S): 667.13 seconds
+  User time (U): 1688.52 seconds
+  Major page faults (F): 429
+  Minor page faults (R): 58641344
+  Context switches involuntarily (c): 23481
+  Context switches voluntarily (w): 180288
+Run 78 (-j 128):     39.62 seconds / 90.86 kernels/hour [P:5941%, 394 maj. pagefaults]
+  Elapsed Time(E): 0:39.62 (39.62 seconds)
+  CPU usage (P): 5941%
+  Kernel time (S): 668.78 seconds
+  User time (U): 1685.20 seconds
+  Major page faults (F): 394
+  Minor page faults (R): 58658362
+  Context switches involuntarily (c): 23994
+  Context switches voluntarily (w): 181868
+Run 79 (-j 128):     39.71 seconds / 90.66 kernels/hour [P:5922%, 470 maj. pagefaults]
+  Elapsed Time(E): 0:39.71 (39.71 seconds)
+  CPU usage (P): 5922%
+  Kernel time (S): 663.34 seconds
+  User time (U): 1688.78 seconds
+  Major page faults (F): 470
+  Minor page faults (R): 58635363
+  Context switches involuntarily (c): 23364
+  Context switches voluntarily (w): 182610
+Run 80 (-j 128):     39.77 seconds / 90.52 kernels/hour [P:5914%, 420 maj. pagefaults]
+  Elapsed Time(E): 0:39.77 (39.77 seconds)
+  CPU usage (P): 5914%
+  Kernel time (S): 664.46 seconds
+  User time (U): 1687.97 seconds
+  Major page faults (F): 420
+  Minor page faults (R): 58649906
+  Context switches involuntarily (c): 23502
+  Context switches voluntarily (w): 177365
+Run 81 (-j 128):     40.58 seconds / 88.71 kernels/hour [P:5788%, 443 maj. pagefaults]
+  Elapsed Time(E): 0:40.58 (40.58 seconds)
+  CPU usage (P): 5788%
+  Kernel time (S): 665.32 seconds
+  User time (U): 1684.19 seconds
+  Major page faults (F): 443
+  Minor page faults (R): 58633506
+  Context switches involuntarily (c): 23136
+  Context switches voluntarily (w): 185384
+Run 82 (-j 128):     39.48 seconds / 91.19 kernels/hour [P:5964%, 327 maj. pagefaults]
+  Elapsed Time(E): 0:39.48 (39.48 seconds)
+  CPU usage (P): 5964%
+  Kernel time (S): 668.23 seconds
+  User time (U): 1686.91 seconds
+  Major page faults (F): 327
+  Minor page faults (R): 58644723
+  Context switches involuntarily (c): 23833
+  Context switches voluntarily (w): 179603
+Run 83 (-j 128):     39.49 seconds / 91.16 kernels/hour [P:5965%, 373 maj. pagefaults]
+  Elapsed Time(E): 0:39.49 (39.49 seconds)
+  CPU usage (P): 5965%
+  Kernel time (S): 665.79 seconds
+  User time (U): 1690.37 seconds
+  Major page faults (F): 373
+  Minor page faults (R): 58632612
+  Context switches involuntarily (c): 23889
+  Context switches voluntarily (w): 183680
+Run 84 (-j 128):     39.29 seconds / 91.63 kernels/hour [P:5990%, 390 maj. pagefaults]
+  Elapsed Time(E): 0:39.29 (39.29 seconds)
+  CPU usage (P): 5990%
+  Kernel time (S): 667.05 seconds
+  User time (U): 1686.86 seconds
+  Major page faults (F): 390
+  Minor page faults (R): 58641239
+  Context switches involuntarily (c): 23882
+  Context switches voluntarily (w): 184908
+Run 85 (-j 128):     40.55 seconds / 88.78 kernels/hour [P:5794%, 395 maj. pagefaults]
+  Elapsed Time(E): 0:40.55 (40.55 seconds)
+  CPU usage (P): 5794%
+  Kernel time (S): 663.22 seconds
+  User time (U): 1686.54 seconds
+  Major page faults (F): 395
+  Minor page faults (R): 58631934
+  Context switches involuntarily (c): 23015
+  Context switches voluntarily (w): 181678
+Run 86 (-j 128):     39.19 seconds / 91.86 kernels/hour [P:6006%, 407 maj. pagefaults]
+  Elapsed Time(E): 0:39.19 (39.19 seconds)
+  CPU usage (P): 6006%
+  Kernel time (S): 666.03 seconds
+  User time (U): 1688.38 seconds
+  Major page faults (F): 407
+  Minor page faults (R): 58640642
+  Context switches involuntarily (c): 23913
+  Context switches voluntarily (w): 187492
+Run 87 (-j 128):     39.27 seconds / 91.67 kernels/hour [P:5995%, 434 maj. pagefaults]
+  Elapsed Time(E): 0:39.27 (39.27 seconds)
+  CPU usage (P): 5995%
+  Kernel time (S): 665.50 seconds
+  User time (U): 1689.00 seconds
+  Major page faults (F): 434
+  Minor page faults (R): 58644693
+  Context switches involuntarily (c): 23473
+  Context switches voluntarily (w): 177967
+Run 88 (-j 128):     39.40 seconds / 91.37 kernels/hour [P:5963%, 399 maj. pagefaults]
+  Elapsed Time(E): 0:39.40 (39.40 seconds)
+  CPU usage (P): 5963%
+  Kernel time (S): 664.31 seconds
+  User time (U): 1685.79 seconds
+  Major page faults (F): 399
+  Minor page faults (R): 58631211
+  Context switches involuntarily (c): 23880
+  Context switches voluntarily (w): 179252
+Run 89 (-j 128):     39.24 seconds / 91.74 kernels/hour [P:5995%, 413 maj. pagefaults]
+  Elapsed Time(E): 0:39.24 (39.24 seconds)
+  CPU usage (P): 5995%
+  Kernel time (S): 667.67 seconds
+  User time (U): 1685.27 seconds
+  Major page faults (F): 413
+  Minor page faults (R): 58629288
+  Context switches involuntarily (c): 24009
+  Context switches voluntarily (w): 185872
+Run 90 (-j 128):     39.55 seconds / 91.02 kernels/hour [P:5952%, 425 maj. pagefaults]
+  Elapsed Time(E): 0:39.55 (39.55 seconds)
+  CPU usage (P): 5952%
+  Kernel time (S): 668.39 seconds
+  User time (U): 1686.07 seconds
+  Major page faults (F): 425
+  Minor page faults (R): 58636009
+  Context switches involuntarily (c): 23703
+  Context switches voluntarily (w): 176343
+Run 91 (-j 128):     39.45 seconds / 91.25 kernels/hour [P:5954%, 435 maj. pagefaults]
+  Elapsed Time(E): 0:39.45 (39.45 seconds)
+  CPU usage (P): 5954%
+  Kernel time (S): 664.11 seconds
+  User time (U): 1685.32 seconds
+  Major page faults (F): 435
+  Minor page faults (R): 58644367
+  Context switches involuntarily (c): 23607
+  Context switches voluntarily (w): 181675
+Run 92 (-j 128):     39.35 seconds / 91.49 kernels/hour [P:5974%, 402 maj. pagefaults]
+  Elapsed Time(E): 0:39.35 (39.35 seconds)
+  CPU usage (P): 5974%
+  Kernel time (S): 665.65 seconds
+  User time (U): 1685.46 seconds
+  Major page faults (F): 402
+  Minor page faults (R): 58637220
+  Context switches involuntarily (c): 23918
+  Context switches voluntarily (w): 177961
+Run 93 (-j 128):     39.24 seconds / 91.74 kernels/hour [P:5997%, 397 maj. pagefaults]
+  Elapsed Time(E): 0:39.24 (39.24 seconds)
+  CPU usage (P): 5997%
+  Kernel time (S): 663.57 seconds
+  User time (U): 1690.31 seconds
+  Major page faults (F): 397
+  Minor page faults (R): 58636045
+  Context switches involuntarily (c): 23896
+  Context switches voluntarily (w): 184785
+Run 94 (-j 128):     39.50 seconds / 91.14 kernels/hour [P:5952%, 359 maj. pagefaults]
+  Elapsed Time(E): 0:39.50 (39.50 seconds)
+  CPU usage (P): 5952%
+  Kernel time (S): 666.69 seconds
+  User time (U): 1684.66 seconds
+  Major page faults (F): 359
+  Minor page faults (R): 58627783
+  Context switches involuntarily (c): 23375
+  Context switches voluntarily (w): 168599
+Run 95 (-j 128):     39.88 seconds / 90.27 kernels/hour [P:5901%, 359 maj. pagefaults]
+  Elapsed Time(E): 0:39.88 (39.88 seconds)
+  CPU usage (P): 5901%
+  Kernel time (S): 665.56 seconds
+  User time (U): 1688.30 seconds
+  Major page faults (F): 359
+  Minor page faults (R): 58633661
+  Context switches involuntarily (c): 23590
+  Context switches voluntarily (w): 181613
+Run 96 (-j 128):     39.92 seconds / 90.18 kernels/hour [P:5888%, 424 maj. pagefaults]
+  Elapsed Time(E): 0:39.92 (39.92 seconds)
+  CPU usage (P): 5888%
+  Kernel time (S): 663.28 seconds
+  User time (U): 1687.72 seconds
+  Major page faults (F): 424
+  Minor page faults (R): 58639797
+  Context switches involuntarily (c): 23777
+  Context switches voluntarily (w): 186291
+Run 97 (-j 128):     39.58 seconds / 90.96 kernels/hour [P:5949%, 412 maj. pagefaults]
+  Elapsed Time(E): 0:39.58 (39.58 seconds)
+  CPU usage (P): 5949%
+  Kernel time (S): 666.40 seconds
+  User time (U): 1688.56 seconds
+  Major page faults (F): 412
+  Minor page faults (R): 58632500
+  Context switches involuntarily (c): 23981
+  Context switches voluntarily (w): 183291
+Run 98 (-j 128):     39.49 seconds / 91.16 kernels/hour [P:5953%, 376 maj. pagefaults]
+  Elapsed Time(E): 0:39.49 (39.49 seconds)
+  CPU usage (P): 5953%
+  Kernel time (S): 663.89 seconds
+  User time (U): 1687.54 seconds
+  Major page faults (F): 376
+  Minor page faults (R): 58635852
+  Context switches involuntarily (c): 23774
+  Context switches voluntarily (w): 179768
+Run 99 (-j 128):     39.40 seconds / 91.37 kernels/hour [P:5971%, 413 maj. pagefaults]
+  Elapsed Time(E): 0:39.40 (39.40 seconds)
+  CPU usage (P): 5971%
+  Kernel time (S): 667.57 seconds
+  User time (U): 1685.63 seconds
+  Major page faults (F): 413
+  Minor page faults (R): 58626869
+  Context switches involuntarily (c): 23928
+  Context switches voluntarily (w): 181403
+Run 100 (-j 128):    39.32 seconds / 91.56 kernels/hour [P:5979%, 375 maj. pagefaults]
+  Elapsed Time(E): 0:39.32 (39.32 seconds)
+  CPU usage (P): 5979%
+  Kernel time (S): 665.09 seconds
+  User time (U): 1686.37 seconds
+  Major page faults (F): 375
+  Minor page faults (R): 58632557
+  Context switches involuntarily (c): 23771
+  Context switches voluntarily (w): 182145
+
