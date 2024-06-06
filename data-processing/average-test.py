@@ -5,7 +5,7 @@ import statistics
 
 parser = argparse.ArgumentParser(description="Calculate average every 256 lines from a log file")
 parser.add_argument("file_path", type=str, help="Path to the log file")
-parser.add_argument('-t', '--type', type=str, help='Type log to process', required=True)
+parser.add_argument('-t', '--type', type=str, help='Type log to process', required=False,default='')
 
 group_data = parser.add_mutually_exclusive_group(required=True)
 group_data.add_argument('-a','--average', action='store_true', help='Print the average the tests')
