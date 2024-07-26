@@ -17,20 +17,12 @@ run_kcbench() {
   echo "$arch: Starting test with $cpus cpus"
 
   clean_kernel
-  ../../kcbench/kcbench --detailed-results --cross-compile $arch --jobs $cpus --iterations 100 --crosscomp-scheme fedora --src /tmp/tcc-test/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
-}
-
-# Function to log core clocks
-log_core_clocks() {
-  cpus=$1
-  arch=$2
-
-  echo "$arch: Starting Clock measurement with $cpus cpus"
-  if [ $tech = 'vm' ]; then
-    ssh epyc-host "while true; do cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; sleep 1; done" >> $logpath/$tech/$arch/core_clocks-$cpus-$date.log &
+  
+  if [ "$arch" == "x86_64" ]; then
+    ../../kcbench/kcbench --detailed-results --jobs $cpus --iterations 100 --crosscomp-scheme fedora --src /tmp/tcc-test/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
   else
-    bash -c "while true; do cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; sleep 1; done" >> $logpath/$tech/$arch/core_clocks-$cpus-$date.log &
-  fi
+    ../../kcbench/kcbench --detailed-results --cross-compile $arch --jobs $cpus --iterations 100 --crosscomp-scheme fedora --src /tmp/tcc-test/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
+  fi  
 }
 
 notify () {
