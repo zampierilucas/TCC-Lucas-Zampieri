@@ -19,9 +19,9 @@ run_kcbench() {
   clean_kernel
   
   if [ "$arch" == "x86_64" ]; then
-    ../../kcbench/kcbench --detailed-results --jobs $cpus --iterations 100 --crosscomp-scheme fedora --src /tmp/tcc-test/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
+    ../../kcbench/kcbench --detailed-results --jobs $cpus --iterations 150 --crosscomp-scheme fedora --src /tmp/tcc-test/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
   else
-    ../../kcbench/kcbench --detailed-results --cross-compile $arch --jobs $cpus --iterations 100 --crosscomp-scheme fedora --src /tmp/tcc-test/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
+    ../../kcbench/kcbench --detailed-results --cross-compile $arch --jobs $cpus --iterations 150 --crosscomp-scheme fedora --src /tmp/tcc-test/linux-6.4.15 2>&1 | tee $logpath/$tech/$arch/kcbench-$cpus-$date.log
   fi  
 }
 
