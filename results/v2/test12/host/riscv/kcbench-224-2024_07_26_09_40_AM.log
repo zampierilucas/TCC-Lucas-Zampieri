@@ -1,0 +1,22 @@
+
+WARNING: Cross-compiling still experimental. Use at your own risk!
+
+Processor:           AMD EPYC 7713 64-Core Processor [256 CPUs]
+Cpufreq; Memory:     schedutil [acpi-cpufreq]; 240371 MiB
+Linux running:       6.9.10-100.fc39.x86_64 [x86_64]
+Compiler (target):   riscv64-linux-gnu-gcc (GCC) 13.2.1 20230728 (Red Hat Cross 13.2.1-1)
+Compiler (host):     gcc (GCC) 13.3.1 20240522 (Red Hat 13.3.1-1)
+Linux compiled:      6.4.15 [/tmp/tcc-test/linux-6.4.15]
+Config; Environment: defconfig; ARCH="riscv" CCACHE_DISABLE="1" CROSS_COMPILE="riscv64-linux-gnu-"
+Build command:       make vmlinux
+Filling caches:      This might take a while... Done
+Run 1 (-j 224):      36.26 seconds / 99.28 kernels/hour [P:11579%, 2008 maj. pagefaults]
+  Elapsed Time(E): 0:36.26 (36.26 seconds)
+  CPU usage (P): 11579%
+  Kernel time (S): 1079.96 seconds
+  User time (U): 3118.80 seconds
+  Major page faults (F): 2008
+  Minor page faults (R): 38855045
+  Context switches involuntarily (c): 29885
+  Context switches voluntarily (w): 128742
+

@@ -1,0 +1,22 @@
+
+WARNING: Cross-compiling still experimental. Use at your own risk!
+
+Processor:           AMD EPYC 7713 64-Core Processor [256 CPUs]
+Cpufreq; Memory:     schedutil [acpi-cpufreq]; 240371 MiB
+Linux running:       6.9.10-100.fc39.x86_64 [x86_64]
+Compiler (target):   aarch64-linux-gnu-gcc (GCC) 13.2.1 20230728 (Red Hat Cross 13.2.1-1)
+Compiler (host):     gcc (GCC) 13.3.1 20240522 (Red Hat 13.3.1-1)
+Linux compiled:      6.4.15 [/tmp/tcc-test/linux-6.4.15]
+Config; Environment: defconfig; ARCH="arm64" CCACHE_DISABLE="1" CROSS_COMPILE="aarch64-linux-gnu-"
+Build command:       make vmlinux
+Filling caches:      This might take a while... Done
+Run 1 (-j 160):      65.90 seconds / 54.63 kernels/hour [P:10765%, 3744 maj. pagefaults]
+  Elapsed Time(E): 1:05.90 (65.90 seconds)
+  CPU usage (P): 10765%
+  Kernel time (S): 1974.98 seconds
+  User time (U): 5120.24 seconds
+  Major page faults (F): 3744
+  Minor page faults (R): 102167026
+  Context switches involuntarily (c): 48725
+  Context switches voluntarily (w): 328610
+
