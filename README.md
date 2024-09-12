@@ -51,9 +51,9 @@ For this we expect you to be running the same dist/os/version as in the containe
 
 1. For the host the only step is to install its dependencies, [here](#Dependencies).
 
-## Setting Up an LXC Container with Fedora 38
+## Setting Up an LXC Container with Fedora 40
 
-To run the KCBench compilation tests in an LXC container with Fedora 38, follow these steps:
+To run the KCBench compilation tests in an LXC container with Fedora 40, follow these steps:
 
 1. Install LXC on your system.
 
@@ -67,61 +67,93 @@ To run the KCBench compilation tests in an LXC container with Fedora 38, follow 
    systemctl enable --now lxc
    ```
 
-2. Create an LXC container using a Fedora 38 image:
+3. Create an LXC container using a Fedora 40 image:
 
    ```bash
-   lxc-create -n fedora-container -t download -- -d fedora -r 38 -a amd64
+   lxc-create -n fedora-container -t download -- -d fedora -r 40 -a amd64
    ```
 
-3. Start the LXC container:
+4. Mount the host /root directory to the container's home directory. This can be done by editing the container's configuration file, typically located at /var/lib/lxc/fedora-container/config. Add the following line to the configuration file:
+
+   ```bash
+   lxc.mount.entry = /root mnt/host-root none bind,create=dir 0 0
+   ```
+
+5. Start the LXC container:
 
    ```bash
    lxc-start fedora-container
    ```
 
-4. Enter the container's shell:
+6. Enter the container's shell:
 
    ```bash
    lxc-attach fedora-container
    ```
 
-4. inside the container install this project dependencies as shown [here](#Dependencies).
+7. inside the container install this project dependencies as shown [here](#Dependencies).
 
-## Setting Up a KVM Virtual Machine
+## Setting Up a Docker Container with Fedora 40
 
-To run the KCBench compilation tests in a QEMU virtual machine, follow these steps:
+To run the KCBench compilation tests in a Docker container with Fedora 40, follow these steps:
 
-1. Install the KVM tools in your system. It is also provided as part of the dependencies section above.
-
-2. Download a qcow2 fedora 38 disk image. For our use case, fedora 38 x86-64:
+1. Install Docker on your system.
 
    ```bash
-   wget https://download.fedoraproject.org/pub/fedora/linux/releases/38/Server/x86_64/images/Fedora-Server-KVM-38-1.6.x86_64.qcow2
+   sudo dnf -y install dnf-plugins-core
+   sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+   sudo dnf install docker-ce docker-ce-cli containerd.io
    ```
 
-3. Aditinal kvm setup, we need to setup and start the kvm interface before creating our vm.
-
-   ```
-   usermod -aG libvirt $usermod
-   # Logout and login to reload group policies
-   systemctl enable --now libvirtd
-   ```
-
-3. Create a KVM virtual machine using the downloaded disk image:
+2. Start the Docker service:
 
    ```bash
-   virt-install \
-   --name fedora \
-   --virt-type kvm \
-   --boot hd \
-   --disk path=Fedora-Server-KVM-38-1.6.x86_64.qcow2,device=disk \
-   --graphics none \
-   --cpu host \
-   --os-variant=fedora38 \
-   --import
+   sudo systemctl start docker
    ```
 
-4. inside the virtual-machine install this project dependencies as shown [here](#Dependencies).
+3. Pull the Fedora 40 Docker image:
+
+   ```bash
+   sudo docker pull fedora:40
+   ```
+
+4. Create a Docker container using the Fedora 40 image:
+
+   ```bash
+   sudo docker run -it -v /root:/mnt/host-root --name fedora-container fedora:40
+   ```
+
+5. Install the project dependencies inside the container as shown [here](#Dependencies).
+
+6. You can now proceed with cloning the KCBench repository and running the compilation tests.
+
+## Setting Up a Podman Container with Fedora 40
+
+To run the KCBench compilation tests in a Podman container with Fedora 40, follow these steps:
+
+1. Install Podman on your system (if not already installed):
+
+   ```bash
+   sudo dnf install podman
+   ```
+
+2. Pull the Fedora 40 Podman image:
+
+   ```bash
+   podman pull fedora:40
+   ```
+
+3. Create a Podman container using the Fedora 40 image:
+
+   ```bash
+   podman run -it -v /root:/mnt/host-root --security-opt label=disable --name fedora-container fedora:40
+   ```
+
+4. Install the project dependencies inside the container as shown [here](#Dependencies).
+
+5. You can now proceed with cloning the KCBench repository and running the compilation tests.
+
+Note: Podman is designed to be a drop-in replacement for Docker, so most Docker commands can be used with Podman by simply replacing `docker` with `podman` in the command.
 
 ## Running the tests
 
